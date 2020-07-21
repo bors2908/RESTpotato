@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+/**
+ *  Simple REST controller class with two methods
+ */
 @RestController
 @RequestMapping("/potato")
 public class RequestController {
@@ -16,6 +19,7 @@ public class RequestController {
         this.potatoService = potatoService;
     }
 
+   
     @PostMapping("/postStrings")
     public List<String> postStrings(@RequestBody List<String> strings) {
         return potatoService.prepareStrings(strings);
