@@ -19,7 +19,7 @@ public class RequestController {
         this.potatoService = potatoService;
     }
 
-   
+
     @PostMapping("/postStrings")
     public List<String> postStrings(@RequestBody List<String> strings) {
         return potatoService.prepareStrings(strings);
