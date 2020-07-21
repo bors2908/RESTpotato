@@ -1,14 +1,11 @@
 package bors.restpotato.service;
 
 import bors.restpotato.service.impl.PotatoServiceImpl;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PotatoServiceTest {
 
