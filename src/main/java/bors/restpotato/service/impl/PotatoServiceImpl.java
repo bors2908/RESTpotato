@@ -25,7 +25,12 @@ public class PotatoServiceImpl implements PotatoService {
      */
     @Override
     public List<String> prepareStrings(List<String> strings) {
-        sortStrings(strings);
+        strings.sort((s1, s2) -> {
+            int res = Integer.compare(s1.length(), s2.length());
+            if (res != 0) return res;
+            else return s1.compareTo(s2);
+        });
+        
         return strings.stream().map(s -> s = "(" + s.length() + "): " + s).collect(Collectors.toList());
     }
 
@@ -45,13 +50,6 @@ public class PotatoServiceImpl implements PotatoService {
         return parseMonth(month);
     }
 
-    private void sortStrings(List<String> strings) {
-        strings.sort((s1, s2) -> {
-            int res = Integer.compare(s1.length(), s2.length());
-            if (res != 0) return res;
-            else return s1.compareTo(s2);
-        });
-    }
 
     private String parseMonth(String month) {
         char[] symbols = month.toCharArray();
